@@ -1,3 +1,5 @@
+
+![render0006](https://github.com/user-attachments/assets/eb9c8e1c-faaa-471e-97d9-1b3075a3e7e6)
 ### Classification of Lunar Rocks
 
 **Lisa Jacob**
@@ -42,14 +44,12 @@ During training, augmentations are applied with a probability less than 100% to 
 #### Data Sources
 Kaggle dataset [Artificial Lunar Rocky Landscape](https://www.kaggle.com/datasets/romainpessia/artificial-lunar-rocky-landscape-dataset)
 
-Content
-
-The dataset currently contains 9,766 realistic renders of rocky lunar landscapes, and their segmented equivalents (the 3 classes are the sky, smaller rocks, and larger rocks). A table of bounding boxes for all larger rocks and processed, cleaned-up ground truth images are also provided. We recommend that users check the "Understanding and Using the Dataset" kernel for additional information and guidelines on how to use the dataset effectively.provide link here.
+The dataset currently contains 9,766 realistic renders of rocky lunar landscapes, and their segmented equivalents (the 4 classes are the sky, surface, smaller rocks, and larger rocks). A table of bounding boxes for all larger rocks and processed, cleaned-up ground truth images are also provided. For the project, I used the render, and clean folders to train, test, and validate the model. For additional information and guidelines on how to use the dataset effectively, refer to [Understanding and Using the Dataset](https://www.kaggle.com/code/romainpessia/understanding-and-using-the-dataset-wip) kernel.
 
 #### Methodology
 
-Data Collection: Gather and preprocess lunar rock images from existing missions and databases.
-Model Development: Train and validate deep learning models using a combination of real and synthetic data to achieve high segmentation accuracy.
+Data Collection: Gathered and preprocessed lunar rock images from the Data Source described above.
+Model Development: Train and validate deep learning models using a combination of real and synthetic data to achieve high segmentation accuracy. Utilized PyTorch, and Albumentations libraries.
 Integration and Testing: Deploy the models in a test environment to evaluate performance and make iterative improvements.
 Deployment: Implement the model for operational use in analyzing lunar rock samples and integrate it with existing data analysis workflows.
 
@@ -57,23 +57,27 @@ For this project, I will be using ResNeXt, a Convolutional Neural Network (CNN) 
 
 
 #### Results
-Model evaluation on a test sample
-Median Pixel Accuracy: 98.72%
-Median IoU: 65.41%
+Model evaluation on a test sample resulted in:
+- Median Pixel Accuracy: 98.72%
+- Median IoU: 65.41%
+
+Successful Prediction of Lunar rocks
+
+![prediction1](https://github.com/user-attachments/assets/26bddc85-eaf0-4e8f-89df-8c6635eba7bb)
 
 #### Next steps
-Determine which augmentations would result in the most accurate results. 
-Comparison of model performance with different deep learning architectures.
--Segnet
--Unet
--DeepLab Series
-Provide a streamlit front end for user to select the files and to present the results
+1. Determine which augmentations would result in the most accurate results. 
+2. Comparison of model performance with different deep learning architectures.
+ - Segnet
+ - Unet
+ - DeepLab Series
+3. Provide a streamlit front end for user to select the files and to present the results
 
 #### Outline of project
 The project was developed using Google Colab to leverage GPU power for handling large images. For image processing, I created utility functions within a lunar_image_processor library. This library facilitates the creation of necessary folders, and the splitting of data into test, validation, and training sets. It also enables resizing images into smaller patches. To run the code, this module should be imported into the Google Colab environment.
-- [Preprocessing and folder creation]
-- [Exploratory Data Analysis]()
-- [Initial pass at algorithm development]()
+- [Preprocessing and folder creation](https://github.com/lisajacob/Capstone-Project-24.1-Final-Report/tree/main/lunar_image_processor)
+- [Exploratory Data Analysis](https://github.com/lisajacob/Capstone-Project-24.1-Final-Report/blob/main/EDA.ipynb)
+- [Model development and Findings](https://github.com/lisajacob/Capstone-Project-24.1-Final-Report/blob/main/LunarModels.ipynb)
 
 ##### Contact and Further Information
 For further information, send an email to lisa.jacob@gmail.com
